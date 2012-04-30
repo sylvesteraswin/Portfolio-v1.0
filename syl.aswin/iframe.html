@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<iframe id="myFrame" src="index.html"></iframe>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		(function(){
+			var iframe = document.getElementById('myFrame'),
+				iframeJ= $('#myFrame'),
+				content;
+			alert('Loaded');
+			
+			
+			function WaitForFrame(){
+				if(iframe.contentWindow.document.readyState != 'complete'){
+					console.log('Not');
+					setTimeout(WaitForFrame, 200);
+				}else{
+					done();
+				}
+			}
+			
+			function done(){
+				alert('Frame is loaded');
+				content = iframeJ.contents().find("body");
+				console.log('Body Fetched');
+				content.find('header').remove();
+				console.log('Header Removed');
+			}
+			
+			WaitForFrame();
+		})();
+	</script>
+</body>
+</html>
