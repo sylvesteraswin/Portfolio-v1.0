@@ -4,7 +4,11 @@
                 "name":"m.aldoshoes.com",
 				"title":"Aldoshoes",
                 "descp":"Mobile Content Adaptation for US, UK, CA (eng & fre) site",
-                "image":"pro_3_big.jpg",
+                "image":[
+					{"value":"pro_3_big.jpg"},
+					{"value":"pro_3_big.jpg"},
+					{"value":"pro_3_big.jpg"}
+				],
                 "position":"design-aldo",
 				"form":"mobile",
 				"company":"Akamai",
@@ -351,10 +355,6 @@
 					"exp":"2 Years"
 				},
 				{
-					"name" : "Usability Test",
-					"exp" : "2 Years"
-				},
-				{
 					"name" : "Accessibility",
 					"screen" : "icon-move, icon-signal",
 					"screen-name":"Desktop,Mobile",
@@ -368,15 +368,9 @@
 				},
 				{
 					"name" : "Prototyping",
-					"screen" : "icon-move",
-					"screen-name":"Desktop",
-					"exp" : "3 Years"
-				},
-				{
-					"name" : "Prototyping",
-					"screen" : "icon-signal",
-					"screen-name":"Mobile",
-					"exp" : "<2 Years"
+					"screen" : "icon-move, icon-signal",
+					"screen-name":"Desktop,Mobile",
+					"exp" : "2+ Years"
 				},
 				{
 					"name" : "Ethics",

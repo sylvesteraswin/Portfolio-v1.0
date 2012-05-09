@@ -18,21 +18,34 @@
 			
 			this.topUlScrollAct();
 			
-			this.appendShare();
+			//this.appendShare();
 
 		},
+		resizeSkillBook:function(){
+			var sTab = $('#mySkillsTab'),
+				sTabCont = $('#mySkillsTabContent'),
+				sTabb = $('.tabbable');
+			
+			//alert('Fired : ' + sTab.height());
+					
+			sTabCont.height(sTab.height() - 10);
+			sTabCont.width(sTabb.width()-sTab.width()-10);
+		},
 		appendShare : function(){
-			// var a = '<div class="addthis_toolbox addthis_default_style "><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_google_plusone" g:plusone:size="medium"></a><a class="addthis_counter addthis_pill_style"></a></div><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f96742510633e8c"></script>';
-			// 			$('.like-btns').html(a);
-			$('<script />').html('(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=136190599838893"; fjs.parentNode.insertBefore(js, fjs);}(document, "script", "facebook-jssdk"));(function() {var po = document.createElement("script"); po.type = "text/javascript"; po.async = true; po.src = "https://apis.google.com/js/plusone.js";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);})();')
-									.appendTo(document.body);
-			$('.like-btns').html('<div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="true" data-font="segoe ui"></div><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://www.iamsyl.com" data-counter="right"></script><div class="g-plusone" data-size="medium" data-href="http://www.iamsyl.com"></div>')
-						   .find('div')
-						   .css('float', 'left')
-						   .end()
-						   .css('margin-top', '4px')
-						   .find('div:nth-child(1)')
-						   .css('width','77px');
+			//alert('Hey');
+			// $('<script />').html('(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=136190599838893"; fjs.parentNode.insertBefore(js, fjs);}(document, "script", "facebook-jssdk"));(function() {var po = document.createElement("script"); po.type = "text/javascript"; po.async = true; po.src = "https://apis.google.com/js/plusone.js";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);})();')
+			// 									.appendTo(document.body);
+			// 			$('.like-btns').html('<div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="true" data-font="segoe ui"></div><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://www.iamsyl.com" data-counter="right"></script><div class="g-plusone" data-size="medium" data-href="http://www.iamsyl.com"></div>')
+			// 						   .find('div')
+			// 						   .css('float', 'left')
+			// 						   .end()
+			// 						   .css('margin-top', '4px')
+			// 						   .find('div:nth-child(1)')
+			// 						   .css('width','77px');
+			var addthis_config = {
+		         ui_use_css : false
+		     }
+			addthis.init()
 			
 		},
 		topUlScrollAct:function(){
@@ -157,7 +170,15 @@
 		twitterLoad: function(){
 			JQTWEET.loadTweets();
 			
-			EXPERIENCE.genYear();
+			//if(this.checkMobileUA()){EXPERIENCE.genYear();}
+			
+		},
+		loadTimeLine:function(){
+			if(!this.checkMobileUA()){EXPERIENCE.genYear();}
+		},
+		checkMobileUA:function(){
+			//alert(navigator.userAgent + " : " + navigator.userAgent.indexOf("Mobile"));
+			return navigator.userAgent.indexOf("Mobile")>=0;
 		},
 		langLoad : function(ul, div){
 			var ulEl = $('#' + ul),
@@ -189,6 +210,8 @@
 				
 				self.tabLangInit(ul, div);
 				self.scrollInit();
+				
+				self.resizeSkillBook();
 			});
 				
 		},
@@ -330,13 +353,19 @@
 				// console.log('Finished');
 				self.designsOverInvike();
 				self.designAddBorder();
-				self.designClickHandler();
 				
-				self.designTagLoad();
+				if (!self.checkMobileUA()){
+					self.designClickHandler();
+					
+					self.designTagLoad();
+
+					self.designTagCountLoad();
+				}
 				
-				self.designTagCountLoad();
 				
 				self.twitterLoad();
+				
+				self.loadTimeLine();
 			});
 			
 		},
@@ -591,7 +620,50 @@
 	
 	comp.onLoad();
 	
+	$(window).resize(function(){
+		//alert('Resized');
+		comp.resizeSkillBook();
+	});
+	
 })();
+
+(function($){
+	$.fn.extend({
+		
+	});
+})(jQuery);
+
+(function($){
+	$.fn.extend({
+		createImage: function(options){
+			var defaults = {
+				create:true
+			};
+			var options = $.extend({}, defaults, options);
+			
+			return this.each(function(){	
+				var $this = $(this),
+					o = options,
+					imgHold = $('<img />'),
+					togPag = false,
+					tIndCont = $('<div />').addClass(o.tDiv);
+				//alert(o.height);
+				$this.append(tIndCont);
+				tIndCont.append(imgHold)
+						.css('height', o.tIndHeight);
+				console.log(o.src);
+				imgHold.attr('src', o.src)
+					   .attr('height', o.height)
+					   .load(function(){
+							if(parseInt(this.width, 10) > parseInt(this.height, 10)){
+								$(this).attr('data-type','loaded');
+								$this.closest('.'+o.tDiv).css('padding-top','45px')
+							}
+						});
+			});
+		}
+	});
+})(jQuery);
 
 (function($){
 	$.fn.extend({
@@ -758,7 +830,7 @@
 				
 				//End of Menu Section
 				
-				var dlogContD1, dlogContD2, dlogContLeft, dlogContRight, dlogContLeftD1, dlogContLeftD2, dlogContLeftD3, dlogContLeftD1Img, dlogContRightD1, dlogContRightD2, dlogContRightD3;
+				var dlogContD1, dlogContD2, dlogContLeft, dlogContRight, dlogContLeftD1, dlogContLeftD2, dlogContLeftD3, dlogContLeftD1Img, dlogContRightD1, dlogContRightD2, dlogContRightD3, toggleHeight = false;
 				for(var i = 0; i<menus.length; i++){
 					if (menus[i] == 'overview'){
 						dlogContD1 = $('<div />').addClass('design-hc-tb-cont-wrap')
@@ -781,26 +853,48 @@
 													 .appendTo(dlogContLeft)
 													 .css('height', dlogContLeft.height() - 24);
 						dlogContLeftD2 = $('<div />').addClass('design-hc-tb-slide-collection')
-													 .appendTo(dlogContLeftD1);
-						dlogContLeftD3 = $('<div />').addClass('design-hc-tb-slide-individual')
-													 .appendTo(dlogContLeftD2);
-						dlogContLeftD1Img = $('<img />').css('height', dlogContLeftD1.height())
-														.attr('height', dlogContLeftD1.height())
-														.attr('src', 'img/proj/' + $o.image)
-														.appendTo(dlogContLeftD3);
+													 .appendTo(dlogContLeftD1)
+													 .css('height', dlogContLeft.height() - 24);
+	
+						if(typeof $o.image == 'object'){
+							//console.log($o.image.length);
+							//console.log($o.image);
+							
+							$.each($o.image, function(i, data){
+								dlogContLeftD2.createImage({
+									'height': dlogContLeftD1.height(),
+									'src': 'img/proj/' + data.value,
+									'tDiv': 'design-hc-tb-slide-individual',
+									'create':true,
+									'tIndHeight': dlogContLeft.height() - 24
+								});
+							});
+
+						}else{
+							dlogContLeftD2.createImage({
+								'height': dlogContLeftD1.height(),
+								'src': 'img/proj/' + $o.image,
+								'tDiv': 'design-hc-tb-slide-individual',
+								'create':true,
+								'tIndHeight': dlogContLeft.height() - 24
+							});
+						}
+						
+
+						
 						dlogContRightD2 = $('<div />').addClass('design-hc-overview')
 													  .html('<h3>' + $o.descp + '</h3>')
 													  .appendTo(dlogContRight);
 						dlogContRightD3 = $('<p />').html($o.descpLong)
 													  .appendTo(dlogContRightD2);
-						for(var j =1; j<=2; j++){
-							dlogContLeftD3 = $('<div />').addClass('design-hc-tb-slide-individual')
-														 .appendTo(dlogContLeftD2);
-							dlogContLeftD1Img = $('<img />').css('height', dlogContLeftD1.height())
-															.attr('height', dlogContLeftD1.height())
-															.attr('src', 'img/proj/' + $o.image)
-															.appendTo(dlogContLeftD3);
-						}
+						// for(var j =1; j<=2; j++){
+						// 							dlogContLeftD3 = $('<div />').addClass('design-hc-tb-slide-individual')
+						// 														 .appendTo(dlogContLeftD2);
+						// 							dlogContLeftD1Img = $('<img />')//.css('height', dlogContLeftD1.height())
+						// 															.attr('height', dlogContLeftD1.height())
+						// 															.attr('src', 'img/proj/' + $o.image)
+						// 															.appendTo(dlogContLeftD3);
+						// 						}
 						dlogContLeft.append($('<div/>').addClass('design-hc-tb-slide-btns')
 													  .attr('id', 'sliderBtns'));
 					}else if(menus[i] == 'details'){
@@ -943,6 +1037,13 @@ EXPERIENCE = {
 		this.curYear = y + 1;
 	},
 	genYear: function(){
+		
+		var ref = $(this.timeDiv).closest('div.row-fluid');
+		console.log(ref);
+		ref.find('.mainblock').show();
+		ref.find('.shadow').show();
+		
+		
 		this.endDate();
 		this.yearSlot = this.curYear - this.startYear;
 		this.computeSlotWidth();
@@ -1050,7 +1151,12 @@ JQTWEET = {
 					);
 
 				 }
-			}	
+			},
+			statusCode:({
+				400 : function(){
+					alert('Hello')
+				}
+			})	
 
 		});
 		

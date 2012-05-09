@@ -1,0 +1,208 @@
+<section id="about">
+	<h1>What am I<i class="cus-icon-about"></i></h1>
+	<div class="tabbable">
+		<ul id="myAboutTab" class="nav nav-tabs" data-tabs="tabs">
+			<li class="active">
+				<a data-target="#wexp" data-toggle="tab">Work Experience</a>
+			</li>
+			<li><a data-target="#edu" data-toggle="tab">Education</a></li>
+			<li><a data-target="#hon" data-toggle="tab">Honours</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="wexp">
+				<div class="accordion" id="accorWork">
+		            <div class="accordion-group">
+		              <div class="accordion-heading">
+		                <a class="accordion-toggle btn" data-toggle="collapse" data-parent="#accorWork" data-target="#colYahoo">
+		                  Yahoo India
+		                </a>
+		              </div>
+		              <div id="colYahoo" class="accordion-body collapse in">
+		                <div class="accordion-inner">
+		                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		                </div>
+		              </div>
+		            </div>
+		            <div class="accordion-group">
+		              <div class="accordion-heading">
+		                <a class="accordion-toggle btn" data-toggle="collapse" data-parent="#accorWork" data-target="#collAkamai">
+		                  Akamai Technologies
+		                </a>
+		              </div>
+		              <div id="collAkamai" class="accordion-body collapse">
+		                <div class="accordion-inner">
+						<div class="row-fluid">
+							<div class="span2">
+								<a href="#" class="company akamai" alt="Akamai Technologies">
+									<img src="img/spacer.gif" alt="Akamai Technologies" />
+								</a>
+								<span class="company-divider"></span>
+							</div>
+							<div class="span10">
+								<dl class="dl-horizontal">
+	  			                  	<dt>Job Title</dt>
+	  								<dd>Associate Professional Services Consultant</dd>
+	  								<dt>Duration</dt>
+	  								<dd>Aug 2010 to Feb 2012</dd>
+	  								<dt>Job Description</dt>
+	  								<dd>
+	  									<ul>
+	  										<li>Mobile Content Adaptation Implementation.</li>
+	  										<li>Innovate UI Experience for mobile user & perform analysis to create mobile UI patterns.</li>
+	  										<li>Creating standard mark up compatible for all form factors of mobile devices.</li>
+	  										<li>Usability & Accessibility Engineering for Mobile Devices.</li>
+	  										<li>Front End Optimization for mobile websites.</li>
+
+	  									</ul>
+	  								</dd>
+	  			                 </dl>
+							</div>
+						</div>
+						<div class="top-gradient-project"><span class="first"></span><span class="second"></span><span class="third"></span><span class="fourth">Project Details</span></div>
+						<div id="myCarousel" class="carousel">
+						  <!-- Carousel items -->
+						  <div class="carousel-inner">
+						    <div class="active item">
+						    	<div class="row-fluid">
+									<div class="span2">
+										<a href="#" class="company aldo" alt="Aldoshoes">
+											<img src="img/spacer.gif" alt="Akamai Technologies" />
+										</a>
+										<span class="company-divider"></span>
+									</div>
+									<div class="span10">
+										<dl class="dl">
+											<dt><i class="icon-flag"></i>Url</dt>
+											<dd>
+												<ul>
+													<li>m.aldoshoes.com/us</li>
+													<li>m.aldoshoes.com/uk</li>
+													<li>m.aldoshoes.com/ca-fre</li>
+													<li>m.aldoshoes.com/ca-eng</li>
+												</ul>
+											</dd>
+											<dt><i class="icon-align-justify"></i>Description</dt>
+											<dd>Implement the mobile content adaptation platform to create a mobile site on the fly.</dd>
+											<dt><i class="icon-comment"></i>Language</dt>
+											<dd>HTML, CSS, JavaScript, jQuery, Free Marker, Akamai Config</dd>
+											<dt><i class="icon-cog"></i>Responsibility</dt>
+											<dd>
+											<ul>
+												<li>Integrate customer desktop site to Akamai content adaptation engine. (Akamai Config)</li>
+												<li>Develop the UI from mockups. (XHTML, CSS2, CSS3)</li>
+												<li>Define User Experience for the mobile user.  (JavaScript, jQuery, XHTML)</li>
+												<li>Define functions and features depending on the capabilities of mobile devices. (jQuery, HTML)</li>
+												<li>Perform Usability Tests on the website and improve the overall usability. (Users)</li>
+												<li>Analyze last mile acceleration of the mobile pages and improve download time. (YSlow, FireBug & HTTP Archieve)</li>
+												<li>Perform Regression testing on the site. (Selenium IDE)</li>
+											</ul>
+										<dl>
+									</div>
+								</div>
+						    </div>
+						    <div class="item">
+						    	<div class="row-fluid">
+									<div class="span2">
+										<a href="#" class="company rockler" alt="Rockler">
+											<img src="img/spacer.gif" alt="Rockler" />
+										</a>
+										<span class="company-divider"></span>
+									</div>
+									<div class="span10">
+										<dl class="dl">
+											<dt><i class="icon-flag"></i>Url</dt>
+											<dd>
+												m.rockler.com
+											</dd>
+											<dt><i class="icon-align-justify"></i>Description</dt>
+											<dd>Implement the mobile content adaptation platform to create a mobile site on the fly.</dd>
+											<dt><i class="icon-comment"></i>Language</dt>
+											<dd>HTML, CSS, JavaScript, jQuery, Free Marker, Akamai Config</dd>
+											<dt><i class="icon-cog"></i>Responsibility</dt>
+											<dd>
+											<ul>
+												<li>Integrate customer desktop site to Akamai content adaptation engine. (Akamai Config)</li>
+												<li>Develop the UI from mockups. (XHTML, CSS2, CSS3)</li>
+												<li>Define User Experience for the mobile user.  (JavaScript, jQuery, XHTML)</li>
+												<li>Define functions and features depending on the capabilities of mobile devices. (jQuery, HTML)</li>
+												<li>Perform Usability Tests on the website and improve the overall usability. (Users)</li>
+												<li>Perform Regression testing on the site. (Selenium IDE)</li>
+											</ul>
+										<dl>
+									</div>
+								</div>
+						    </div>
+						    <div class="item">
+						    	<div class="row-fluid">
+									<div class="span2">
+										<a href="#" class="company bose" alt="Bose">
+											<img src="img/spacer.gif" alt="Bose" />
+										</a>
+										<span class="company-divider"></span>
+									</div>
+									<div class="span10">
+										<dl class="dl">
+											<dt><i class="icon-flag"></i>Url</dt>
+											<dd>
+												m.bose.com
+											</dd>
+											<dt><i class="icon-align-justify"></i>Description</dt>
+											<dd>Implement the mobile content adaptation platform to create a mobile site on the fly.</dd>
+											<dt><i class="icon-comment"></i>Language</dt>
+											<dd>HTML, CSS, Free Marker, Akamai Config</dd>
+											<dt><i class="icon-cog"></i>Responsibility</dt>
+											<dd>
+											<ul>
+												<li>Integrate customer desktop site to Akamai content adaptation engine. (Akamai Config)</li>
+												<li>Develop the UI from mockups. (XHTML, CSS2, CSS3)</li>
+												<li>Define User Experience for the mobile user.  (JavaScript, jQuery, XHTML)</li>
+												<li>Define functions and features depending on the capabilities of mobile devices. (jQuery, HTML)</li>
+												<li>Perform Regression testing on the site. (Selenium IDE)</li>
+											</ul>
+										<dl>
+									</div>
+								</div>
+						    </div>
+						  </div>
+						  <!-- Carousel nav -->
+						  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+						</div>
+		                </div>
+		              </div>
+		            </div>
+		            <div class="accordion-group">
+		              <div class="accordion-heading">
+		                <a class="accordion-toggle btn" data-toggle="collapse" data-parent="#accorWork" data-target="#collTesco">
+		                  Tesco HSC
+		                </a>
+		              </div>
+		              <div id="collTesco" class="accordion-body collapse">
+		                <div class="accordion-inner">
+		                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		                </div>
+		              </div>
+		            </div>
+					<div class="accordion-group">
+		              <div class="accordion-heading">
+		                <a class="accordion-toggle btn" data-toggle="collapse" data-parent="#accorWork" data-target="#colIdc">
+		                  IDC CCR
+		                </a>
+		              </div>
+		              <div id="colIdc" class="accordion-body collapse">
+		                <div class="accordion-inner">
+		                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+			</div>
+			<div class="tab-pane fade" id="edu">
+				Education
+			</div>
+			<div class="tab-pane fade" id="hon">
+				Honours
+			</div>
+		</div>
+	</div>
+</section>
